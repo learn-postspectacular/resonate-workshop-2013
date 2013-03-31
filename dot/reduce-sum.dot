@@ -1,0 +1,19 @@
+digraph g {
+
+node [shape=record, fontsize=18, fontname=Inconsolata];
+
+seq[shape="record",label="1|2|3|4|5|6|7"];
+  seqa[shape="record",label="1|2|3|4|5|6|7"];
+  fn[shape="box",label="(reduce +)"];
+  red[shape="box",label="(reductions +)"];
+  seq2[shape="record",label="28"];
+  seq2a[shape="record",label="1|3|6|10|15|21|28"];
+
+  rank=1 {
+    seq -> fn -> seq2;
+  }
+
+  rank=2 {
+    seqa -> red -> seq2a;
+  }
+}

@@ -1,0 +1,25 @@
+digraph g {
+
+node [shape=record, fontsize=18, fontname=Inconsolata];
+
+prices[shape="record",label="2.99|39.99|8.99"];
+ids[shape="record",label="1|2|3|4|5"];
+
+  fn[shape="box",label="(map (fn [i p] {:id i :price p}))"];
+  seq2[shape="record",label="\{:id 1 :price 2.99\}|\{:id 2 :price 39.99\}|\{:id 3 :price 8.99\}"];
+
+  rank=same {
+    lid[shape=box,label="IDs"];
+    lprice[shape=box,label="Prices"];
+  }
+
+  rank=same {
+    prices;
+    ids;
+  }
+
+  lid -> ids -> fn;
+  lprice -> prices -> fn;
+  fn -> seq2;
+
+}

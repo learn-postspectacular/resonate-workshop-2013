@@ -1,0 +1,14 @@
+digraph g {
+
+node [shape=record, fontsize=18, fontname=Inconsolata];
+
+seq[label="1|2|3|4|5|6|7"];
+first[shape="box",label="(first)"];
+rest[shape="box",label="(rest)"];
+head[label="1"];
+seq2[label="2|3|4|5|6|7"];
+
+seq -> first -> head;
+seq -> rest -> seq2;
+
+}

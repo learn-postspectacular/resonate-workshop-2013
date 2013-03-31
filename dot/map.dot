@@ -1,0 +1,12 @@
+digraph g {
+
+node [shape=record, fontsize=18, fontname=Inconsolata];
+
+  seq[shape="record",label="1|2|3|4"];
+  fn[shape="box",label="(map inc)"];
+  seq2[shape="record",label="2|3|4|5"];
+
+  rank=same {
+    seq -> fn -> seq2;
+  }
+}
