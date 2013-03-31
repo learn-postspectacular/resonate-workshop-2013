@@ -11,7 +11,9 @@
 ;; play{d=Duty;f=d.kr(1/[1,2,4],0,Dseq([0,3,7,12,17]+24,inf));GVerb.ar(Blip.ar(f.midicps*[1,4,8],LFNoise1.kr(1/4,3,4)).sum,200,8)}
 
 (comment
-  ;; A port to Overtone is almost equally succinct, but still hard to understand...
+  ;; A port to Overtone is almost equally succinct, but still hard to
+  ;; understand...
+  ;; https://soundcloud.com/toxi/rukanos-space-organ
   (demo 60 (g-verb (sum (map #(blip (* (midicps (duty:kr % 0 (dseq [24 27 31 36 41] INF))) %2) (mul-add:kr (lf-noise1:kr 1/2) 3 4)) [1 1/2 1/4] [1 4 8])) 200 8))
 
   ;; A more easy-on-the-eyes version would look like this:
