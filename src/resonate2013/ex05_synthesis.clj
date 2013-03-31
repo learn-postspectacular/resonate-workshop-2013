@@ -18,14 +18,14 @@
   (demo 60
         (let [;; First create 3 frequency generators at different
               ;; tempos/rates [1 1/2 1/4]
-              ;; Each generator will cycle (at it's own pace) through the sequence of
+              ;; Each generator will cycle (at its own pace) through the sequence of
               ;; notes given to dseq and convert notes into actual frequencies
               f (map #(midicps (duty:kr % 0 (dseq [24 27 31 36 41] INF))) [1 1/2 1/4])
               ;; Next we transpose the frequencies over several octaves
               ;; and create a band limited impulse generator (blip) for
               ;; each of the freq gens. The blip allows us to configure the number
-              ;; of overtones/harmonics used, which is modulated by a
-              ;; noise generator between 1 and 7...
+              ;; of overtones/harmonics used, which is constantly modulated by a
+              ;; noise generator between 1 and 7 harmonics...
               tones (map #(blip (* % %2) (mul-add:kr (lf-noise1:kr 1/4) 3 4)) f [1 4 8])]
           ;; finally, all tones are summed into a single signal
           ;; and passed through a reverb with a large roomsize and decay time...
@@ -33,7 +33,7 @@
   )
 
 ;; The following synth is taken from Overtone's bundled examples and
-;; based on a Supercollider script by Dan Stowells (comments added by toxi)
+;; based on a Supercollider script by Dan Stowells (w/ comments added by toxi)
 ;; Creates a dubstep synth with random wobble bassline, kick & snare patterns
 (comment
   (demo 60
