@@ -1,5 +1,7 @@
 # resonate 2013 clojure/overtone workshop
 
+(This is a clone of the original repo at https://bitbucket.org/postspectacular/resonate-2013, but now is the new master branch since I moved all repos from learn.postspectacular.com to GH)
+
 This repo contains a collection of examples created for and during the [Clojure](http://clojure.org) &
 [Overtone](https://github.com/overtone/overtone) workshop on 21 March
 2013 in Belgrade as part of [Resonate 2013 festival](http://resonate.io/2013/).
